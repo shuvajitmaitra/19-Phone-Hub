@@ -3,7 +3,7 @@ import MainLayout from "../Layout/MainLayout";
 import Home from "../Pages/Home/Home";
 import Favorite from "../Pages/Favorite/Favorite";
 import Login from "../Pages/Login/Login";
-import Phones from "../Components/Phones/Phones";
+import PhoneDetails from "../Components/PhoneDetails/PhoneDetails";
 
 const Router = createBrowserRouter([
   {
@@ -16,8 +16,9 @@ const Router = createBrowserRouter([
         loader: () => fetch("./Phones.json"),
       },
       {
-        path: "/phones",
-        element: <Phones></Phones>,
+        path: "/phones/:id",
+        element: <PhoneDetails></PhoneDetails>,
+        loader: () => fetch(`../../public/Phones.json`),
       },
 
       {
